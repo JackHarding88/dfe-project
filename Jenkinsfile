@@ -1,6 +1,6 @@
 pipeline {
 environment {  
-registry = "paulmercer/flaskapp"  
+registry = "JackHarding88/dfe-project"  
 registryCredential = 'dockerhub_id'
 dockerImage = ''
 HOME = "${env.WORKSPACE}"
