@@ -1,0 +1,22 @@
+version: '3.7'
+services:
+  frontend:
+    image: JackHarding88/dfe-project:latest
+    deploy:
+      replicas: 1
+    ports:
+    - published: 5000
+      target: 5000
+    depends_on:
+      - backend
+  backend:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+      MYSQL_DATABASE: flaskmysql
+volumes:
+  mysql-data:
