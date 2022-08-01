@@ -1,9 +1,12 @@
-from flask import Flask, render_template
-from flask_wtf import FlaskForm
+from flask import Flask, redirect, render_template, request
+from flask_sqlalchemy import SQLAlchemy
+from flask_wtf import FlaskForm 
 from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired, Length, ValidationError
+
 
 app = Flask(__name__)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///data.db"
 app.config['SECRET_KEY']='SOME_KEY'
 
 class UserCheck:
@@ -24,6 +27,8 @@ class myForm(FlaskForm):
         Length(min=2,max=15)
         ])
     submit = SubmitField('Sign up')
+
+db.create_all()
 
 @app.route('/', methods=['GET','POST'])
 def postName():
