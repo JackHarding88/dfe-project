@@ -8,5 +8,6 @@
       C-->D;
       
        Usersignin-->EnterGameinfo;
-       Usersignin-->Notvalidusername; 
+       Usersignin-->Notvalidusername;
+       EnterGameinfo-->Addgame;
 ```
