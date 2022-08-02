@@ -35,7 +35,7 @@ def postName():
     form = myForm()
     if form.validate_on_submit():
         username = form.username.data
-        return render_template('home.html', form = form, username=username)
+        return render_template('signin.html', form = form, username=username)
     else:
         return render_template('home.html', form = form, username="")
 
