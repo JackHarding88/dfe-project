@@ -2,7 +2,7 @@
 
 ```mermaid
   graph TD;
-      A-->B;
+      Usersignin-->EnterGame;
       A-->C;
       B-->D;
       C-->D;
