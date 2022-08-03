@@ -6,7 +6,7 @@ from wtforms import StringField, SubmitField
 
 
 app = Flask(__name__)
-cnx = mysql.connector.connect(user="Jack", password="{your_password}", host="dbiownit.mysql.database.azure.com", port=3306, database="{your_database}", ssl_ca="{ca-cert filename}", ssl_disabled=False)
+cnx = mysql.connector.connect(user="Jack", password="Zangetsu88", host="dbiownit.mysql.database.azure.com", port=3306, database=" dbiownit.mysql.database.azure.com", ssl_ca="DigiCertGlobalRootCA.crt.pem", ssl_disabled=False)
 
 app.config['SECRET_KEY']='SOME_KEY'
 
