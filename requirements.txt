@@ -1,6 +1,7 @@
 flask
 flask_sqlalchemy
 flask_wtf
+flask_bootstrap
 flask_testing
 pytest
 pytest-cov
