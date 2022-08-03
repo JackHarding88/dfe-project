@@ -5,8 +5,8 @@ from wtforms import StringField, SubmitField
 
 
 app = Flask(__name__)
+cnx = mysql.connector.connect(user="Jack", password="{your_password}", host="dbiownit.mysql.database.azure.com", port=3306, database="{your_database}", ssl_ca="{ca-cert filename}", ssl_disabled=False)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///data.db"
 app.config['SECRET_KEY']='SOME_KEY'
 
 class UserCheck:
