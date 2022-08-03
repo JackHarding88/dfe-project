@@ -2,7 +2,8 @@ version: '3.7'
 services:
   frontend:
     image: JackHarding88/dfe-project:latest
-    deploy:
+    enviroment: 
+    - SQLALCHEMY_DATABASE_URI=deploy:dbiownit.mysql.database.azure.com
       replicas: 1
     ports:
     - published: 5000
