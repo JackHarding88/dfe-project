@@ -19,6 +19,6 @@ services:
       - mysql-data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: Zangetsu88
-      MYSQL_DATABASE: dbiownit
+      MYSQL_DATABASE: dbiownitmysql
 volumes:
   mysql-data:
