@@ -4,20 +4,21 @@ services:
     image: JackHarding88/dfe-project:latest
     enviroment: 
     - SQLALCHEMY_DATABASE_URI=deploy:dbiownit.mysql.database.azure.com
-      replicas: 1
+     
     ports:
     - published: 5000
       target: 5000
     depends_on:
-      - backend
-  backend:
+      - db
+      
+  db:
     image: mysql:5.7
     ports:
       - "3306:3306"
     volumes:
       - mysql-data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: 12345678
-      MYSQL_DATABASE: flaskmysql
+      MYSQL_ROOT_PASSWORD: Zangetsu88
+      MYSQL_DATABASE: dbiownit
 volumes:
   mysql-data:
