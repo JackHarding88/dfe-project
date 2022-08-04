@@ -1,3 +1,4 @@
+from os import environ
 from flask import Flask, redirect, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap
