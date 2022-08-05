@@ -29,6 +29,10 @@ class myForm(FlaskForm):
         Length(min=2,max=15)
         ])
     submit = SubmitField('Sign up')
+    
+    class Games(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(30))
 
 db.create_all()
 
