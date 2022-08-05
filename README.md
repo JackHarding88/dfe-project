@@ -4,7 +4,7 @@
   graph TD;
    
       
-       Enteruser-->EnterGameinfo;
+       Enteruser-->Addgame;
        Enteruser-->Notvalidusername;
-       EnterGameinfo-->Addgame;
+       Addgame-->Readgame;
 ```
