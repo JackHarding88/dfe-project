@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm 
 from wtforms import StringField, SubmitField
-
+from application import app
 
 app = Flask(__name__)
 cnx = mysql.connector.connect(user="Jack", password="{your_password}", host="dbiownit.mysql.database.azure.com", port=3306, database="{your_database}", ssl_ca="{ca-cert filename}", ssl_disabled=False)
@@ -37,9 +37,31 @@ def postName():
     form = myForm()
     if form.validate_on_submit():
         username = form.username.data
-        return render_template('signin.html', form = form, username=username)
+        return render_template('add.html', form = form, username=username)
     else:
         return render_template('home.html', form = form, username="")
+    
+    @app.route('/add')
+def add():
+    new_game = Games(name="New Game")
+    db.session.add(new_game)
+    db.session.commit()
+    return "Added new game to database"
+
+@app.route('/read')
+def read():
+    all_games = Games.query.all()
+    games_string = ""
+    for game in all_games:
+        games_string += "<br>"+ game.name
+    return games_string
+
+@app.route('/update/<name>')
+def update(name):
+    first_game = Games.query.first()
+    first_game.name = name
+    db.session.commit()
+    return first_game.name
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
